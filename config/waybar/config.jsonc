@@ -1,0 +1,69 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "battery",
+        "tray"
+    ],
+
+    "custom/launcher": {
+        "format": "",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+
+
+    "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": {
+        "*": 5
+    }
+},
+
+
+    "clock": {
+        "format": "{:%A %d %B  %H:%M}"
+    },
+
+    "pulseaudio": {
+        "format": " {volume}%",
+        "format-muted": "󰖁"
+    },
+
+    "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "on-click": "nm-connection-editor"
+},
+
+
+
+    "bluetooth": {
+    "format": " {status}",
+    "on-click": "blueman-manager"
+},
+
+
+    "battery": {
+        "format": "{capacity}%"
+    },
+
+    "tray": {
+        "spacing": 10
+    }
+}

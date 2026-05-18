@@ -1,0 +1,80 @@
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 13px;
+}
+
+/* =========================
+   MAIN BAR
+========================= */
+window#waybar {
+    background: rgba(10, 10, 18, 0.70);
+    color: #cdd6f4;
+    border-radius: 14px;
+    margin: 8px;
+    border: 1px solid rgba(137, 180, 250, 0.25);
+}
+
+
+/* =========================
+   WORKSPACES
+========================= */
+#workspaces button {
+    padding: 0 10px;
+    margin: 4px 3px;
+    border-radius: 10px;
+    background: transparent;
+    color: #a6adc8;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    background: rgba(137, 180, 250, 0.25);
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   CLOCK
+========================= */
+#clock {
+    padding: 0 16px;
+    font-weight: bold;
+    color: #89b4fa;
+}
+
+/* =========================
+   RIGHT GROUP (BOX)
+========================= */
+#network,
+#pulseaudio,
+#bluetooth,
+#battery,
+#tray {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(137, 180, 250, 0.20);
+    border-radius: 12px;
+    padding: 4px 10px;
+    margin: 4px 4px;
+}
+
+/* hover */
+#network:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#battery:hover {
+    background: rgba(137, 180, 250, 0.15);
+}
+
+/* =========================
+   BATTERY COLORS
+========================= */
+#battery.warning {
+    color: #f9e2af;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
