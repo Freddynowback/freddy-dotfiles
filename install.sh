@@ -38,6 +38,15 @@ mpvpaper
 echo "Installing configs..."
 
 mkdir -p ~/.config
+# =========================
+# LOCAL BIN SCRIPTS
+# =========================
+
+mkdir -p ~/.local/bin
+
+cp -r local/bin/* ~/.local/bin/
+
+chmod +x ~/.local/bin/*
 
 cp -r config/hypr ~/.config/
 cp -r config/waybar ~/.config/

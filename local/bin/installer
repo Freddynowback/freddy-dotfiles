@@ -1,0 +1,22 @@
+#!/bin/bash
+
+query=$(rofi -dmenu -i -p "Search package")
+
+if [ -z "$query" ]; then
+    exit 0
+fi
+
+results=$(pacman -Ss "$query" 2>/dev/null | awk -F'/' '/^[a-zA-Z0-9]/{print $2}' | awk '{print $1}')
+
+if [ -z "$results" ]; then
+    rofi -e "No packages found"
+    exit 1
+fi
+
+selected=$(echo "$results" | rofi -dmenu -i -p "Select package")
+
+if [ -z "$selected" ]; then
+    exit 0
+fi
+
+kitty -e bash -c "sudo pacman -S $selected; echo 'Press enter...'; read"
