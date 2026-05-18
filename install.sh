@@ -29,6 +29,13 @@ qt5-graphicaleffects \
 qt5-quickcontrols2 \
 qt5-svg \
 fastfetch \
+hyprlock \
+thunar \
+dolphin \
+ttf-jetbrains-mono-nerd \
+networkmanager \
+vivaldi \
+polkit-kde-agent \
 xdg-desktop-portal-hyprland \
 mpvpaper
 
@@ -84,7 +91,11 @@ cp -r wallpapers/* ~/wallpapers/
 # =========================
 systemctl --user enable pipewire || true
 systemctl --user enable wireplumber || true
+sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
+echo "export XDG_CURRENT_DESKTOP=Hyprland" >> ~/.profile
+echo "export XDG_SESSION_TYPE=wayland" >> ~/.profile
+
 # =========================
 # 5. FINISH
 # =========================
