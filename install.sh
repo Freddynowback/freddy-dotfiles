@@ -16,6 +16,7 @@ kitty \
 rofi \
 wlogout \
 dunst \
+sddm \
 git \
 pipewire \
 wireplumber \
@@ -24,6 +25,9 @@ network-manager-applet \
 blueman \
 brightnessctl \
 pamixer \
+qt5-graphicaleffects \
+qt5-quickcontrols2 \
+qt5-svg \
 fastfetch \
 xdg-desktop-portal-hyprland \
 mpvpaper
@@ -43,6 +47,24 @@ cp -r config/rofi ~/.config/
 cp -r config/wlogout ~/.config/
 
 # =========================
+# SDDM
+# =========================
+
+sudo mkdir -p /etc/sddm.conf.d
+
+if [ -f config/sddm/sddm.conf ]; then
+    sudo cp config/sddm/sddm.conf /etc/
+fi
+
+if [ -d config/sddm/sddm.conf.d ]; then
+    sudo cp -r config/sddm/sddm.conf.d/* /etc/sddm.conf.d/
+fi
+
+if [ -d config/sddm/themes ]; then
+    sudo cp -r config/sddm/themes/* /usr/share/sddm/themes/
+fi
+
+# =========================
 # 3. WALLPAPERS
 # =========================
 mkdir -p ~/wallpapers
@@ -53,7 +75,7 @@ cp -r wallpapers/* ~/wallpapers/
 # =========================
 systemctl --user enable pipewire || true
 systemctl --user enable wireplumber || true
-
+sudo systemctl enable sddm
 # =========================
 # 5. FINISH
 # =========================
